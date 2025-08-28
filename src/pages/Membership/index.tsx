@@ -4,21 +4,14 @@ import PaymentForm from './PaymentForm'
 import FAQ from './FAQ'
 
 export default function Membership() {
-  const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'yearly'>('monthly')
+  const [selectedPlan, setSelectedPlan] = useState<'package1'>('package1')
 
   const plans = {
-    monthly: {
+    package1: {
       price: 49000,
       originalPrice: 89000,
-      period: '월',
+      period: '패키지',
       discount: 45,
-    },
-    yearly: {
-      price: 490000,
-      originalPrice: 1068000,
-      period: '년',
-      discount: 54,
-      save: 98000,
     },
   }
 
@@ -47,67 +40,61 @@ export default function Membership() {
           {/* Pricing Cards */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Monthly Plan */}
-              <button
-                onClick={() => setSelectedPlan('monthly')}
-                className={`relative p-6 rounded-xl border-2 transition-all ${
-                  selectedPlan === 'monthly'
-                    ? 'border-amber-500 bg-white shadow-xl'
-                    : 'border-gray-200 bg-white hover:border-gray-300'
-                }`}
-              >
-                {selectedPlan === 'monthly' && (
-                  <div className="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-                    선택됨
+              {/* Package 1 Plan */}
+              <div className="col-span-2">
+                <div className="relative p-8 rounded-xl border-2 border-amber-500 bg-white shadow-xl">
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-bold px-4 py-2 rounded-full">
+                    한정 특가 45% 할인!
                   </div>
-                )}
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">종합 교육 패키지</h3>
-                <div className="mb-4">
-                  <span className="text-3xl font-bold text-gray-900">₩{plans.monthly.price.toLocaleString()}</span>
-                  <span className="text-gray-500">/월</span>
-                </div>
-                <p className="text-sm text-gray-500 line-through mb-2">
-                  ₩{plans.monthly.originalPrice.toLocaleString()}
-                </p>
-                <span className="inline-block bg-red-100 text-red-600 text-sm font-semibold px-3 py-1 rounded-full">
-                  {plans.monthly.discount}% 할인
-                </span>
-              </button>
-
-              {/* Yearly Plan */}
-              <button
-                onClick={() => setSelectedPlan('yearly')}
-                className={`relative p-6 rounded-xl border-2 transition-all ${
-                  selectedPlan === 'yearly'
-                    ? 'border-amber-500 bg-white shadow-xl'
-                    : 'border-gray-200 bg-white hover:border-gray-300'
-                }`}
-              >
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold px-4 py-2 rounded-full">
-                  2개월 무료!
-                </div>
-                {selectedPlan === 'yearly' && (
-                  <div className="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-                    선택됨
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">교육 패키지1</h3>
+                  <div className="text-center mb-6">
+                    <p className="text-sm text-gray-500 line-through mb-2">
+                      ₩{plans.package1.originalPrice.toLocaleString()}
+                    </p>
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-4xl font-bold text-gray-900">₩{plans.package1.price.toLocaleString()}</span>
+                      <span className="inline-block bg-red-100 text-red-600 text-sm font-semibold px-3 py-1 rounded-full">
+                        45% 할인
+                      </span>
+                    </div>
                   </div>
-                )}
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">연간 교육 패키지</h3>
-                <div className="mb-4">
-                  <span className="text-3xl font-bold text-gray-900">₩{plans.yearly.price.toLocaleString()}</span>
-                  <span className="text-gray-500">/년</span>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="text-gray-700">한국 직장문화 이해 PDF (300페이지)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="text-gray-700">비즈니스 한국어 학습서 PDF</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="text-gray-700">취업 성공 전략 가이드 PDF</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="text-gray-700">1:1 이력서 첨삭 서비스 (1회)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="text-gray-700">온라인 상담 30분</span>
+                    </li>
+                  </ul>
+                  <p className="text-sm text-center text-amber-600 font-medium">
+                    * 계정당 1회 구매로 영구 사용 가능
+                  </p>
                 </div>
-                <p className="text-sm text-gray-500 line-through mb-2">
-                  ₩{plans.yearly.originalPrice.toLocaleString()}
-                </p>
-                <div className="space-y-1">
-                  <span className="block bg-red-100 text-red-600 text-sm font-semibold px-3 py-1 rounded-full">
-                    {plans.yearly.discount}% 할인
-                  </span>
-                  <span className="block text-green-600 text-sm font-medium">
-                    ₩{plans.yearly.save?.toLocaleString()} 절약!
-                  </span>
-                </div>
-              </button>
+              </div>
             </div>
 
             {/* Trust Badges */}
@@ -116,7 +103,7 @@ export default function Membership() {
                 <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                 </svg>
-                언제든지 취소 가능
+                영구 사용 가능
               </div>
               <div className="flex items-center text-sm text-gray-600">
                 <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -151,7 +138,7 @@ export default function Membership() {
             지금 시작하세요!
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            5,000명 이상의 회원들이 야트라와 함께 한국 취업에 성공했습니다
+            5,000명 이상의 회원들이 웰킷과 함께 한국 취업에 성공했습니다
           </p>
           <button
             onClick={() => document.getElementById('payment-form')?.scrollIntoView({ behavior: 'smooth' })}

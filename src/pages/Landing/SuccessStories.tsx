@@ -6,7 +6,7 @@ const successStories = [
     company: '삼성전자',
     position: '소프트웨어 엔지니어',
     image: 'https://via.placeholder.com/150',
-    quote: '야트라 에듀케이션의 체계적인 교육과정 덕분에 한국 기업 문화를 완벽하게 이해하고 적응할 수 있었습니다.',
+    quote: '웰킷 에듀케이션의 체계적인 교육과정 덕분에 한국 기업 문화를 완벽하게 이해하고 적응할 수 있었습니다.',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const successStories = [
     company: 'LG화학',
     position: '연구원',
     image: 'https://via.placeholder.com/150',
-    quote: '직장 예절부터 업무 프로세스까지, 야트라 에듀케이션에서 배운 내용들이 실무에 정말 도움이 되었어요.',
+    quote: '직장 예절부터 업무 프로세스까지, 웰킷 에듀케이션에서 배운 내용들이 실무에 정말 도움이 되었어요.',
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export default function SuccessStories() {
             교육 수료 후기
           </h2>
           <p className="text-lg text-gray-600">
-            야트라 에듀케이션으로 한국 직장생활을 성공적으로 시작한 분들의 이야기
+            웰킷 에듀케이션으로 한국 직장생활을 성공적으로 시작한 분들의 이야기
           </p>
         </div>
 

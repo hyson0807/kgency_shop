@@ -14,9 +14,9 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">Y</span>
+              <span className="text-white font-bold">W</span>
             </div>
-            <span className="font-bold text-xl text-gray-900">야트라 에듀케이션</span>
+            <span className="font-bold text-xl text-gray-900">웰킷 에듀케이션</span>
           </Link>
 
           {/* Desktop Navigation */}
